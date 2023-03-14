@@ -8,6 +8,7 @@ def build_heap(data, n):
 
     for i in range(n, 1, -1):
         #print("For: ", data)
+
         while data[i-1] < data [(i//2)-1]:
             data[i-1], data[(i//2)-1] = data[(i//2)-1], data[i-1]
             swaps.append(((i//2) -1, i-1))
@@ -15,8 +16,17 @@ def build_heap(data, n):
             #print("while: ", data)
             if i == 1:
                 break
+    for i in range(n, 1, -1):
+        #print("For: ", data)
 
-    #print(swaps)            
+        while data[i-1] < data [(i//2)-1]:
+            data[i-1], data[(i//2)-1] = data[(i//2)-1], data[i-1]
+            swaps.append(((i//2) -1, i-1))
+            i = i // 2
+            #print("while: ", data)
+            if i == 1:
+                break
+    #print(data)            
     return swaps
  
 
